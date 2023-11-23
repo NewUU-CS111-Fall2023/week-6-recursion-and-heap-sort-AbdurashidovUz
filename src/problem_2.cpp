@@ -23,3 +23,5 @@ int main() {
 
     return 0;
 }
+
+//Time complexcity of this is O(logn)
