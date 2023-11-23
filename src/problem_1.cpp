@@ -1,27 +1,26 @@
 #include <iostream>
 
-void print_numbers(int A, int B) {
-
-    // Ascending order
-    if (A < B) {
-        for (int i = A; i <= B; ++i) {
-            std::cout << i << " ";
-        }
+void printNumbers(int A, int B) {
+    if (A == B) {
+        std::cout << A << std::endl;
+        return;
     }
-        // Descending order
-    else {
-        for (int i = A; i >= B; --i) {
-            std::cout << i << " ";
-        }
+
+    if (A < B) {
+        std::cout << A << std::endl;
+        printNumbers(A + 1, B);
+    } else {
+        std::cout << A << std::endl;
+        printNumbers(A - 1, B);
     }
 }
 
 int main() {
     int A, B;
-    std::cin >> A >> B;
-    print_numbers(A, B);
+    std::cin >> A;
+    std::cin >> B;
+
+    printNumbers(A, B);
 
     return 0;
 }
-
-// Time Complexcity is O(n)
